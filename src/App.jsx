@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */ // Suppress warnings for global vars like __app_id, __firebase_config etc.
+/* eslint-disable no-undef */ 
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
@@ -14,24 +14,21 @@ const CommunityIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none
 const ProfileIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" /></svg> );
 const AdminIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0M3.75 18H7.5m3-6h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0M3.75 12H7.5" /></svg> );
 const LockIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 0 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg> );
-const TokenIcon = () => ( <svg xmlns="http://www.w.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" /></svg> );
+const TokenIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" /></svg> );
 const VideoIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" /></svg> );
 const OfferIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" /></svg> );
 const VisitIcon = () => ( <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c.507 0 1.011-.017 1.511-.052M12 21c-.507 0-1.011-.017-1.511-.052M12 3a9.004 9.004 0 0 0-8.716 6.747M12 3a9.004 9.004 0 0 1 8.716 6.747M12 3c.507 0 1.011.017 1.511.052M12 3c-.507 0-1.011-.017-1.511-.052M6.637 10.87a.75.75 0 0 1-.447-.145l-3.24-2.348a.75.75 0 0 1 0-1.212l3.24-2.348a.75.75 0 0 1 .998 1.363L4.893 8.39l2.292 1.652a.75.75 0 0 1-.548 1.328Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M17.363 10.87a.75.75 0 0 1-.548-1.328l2.292-1.652-2.744-1.98a.75.75 0 0 1 .55-1.363l3.24 2.348a.75.75 0 0 1 0 1.212l-3.24 2.348a.75.75 0 0 1-.447.145Z" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 12.75a.75.75 0 0 1 .75-.75h.008a.75.75 0 0 1 .75.75v.008a.75.75 0 0 1-.75.75h-.008a.75.75 0 0 1-.75-.75v-.008Z" /></svg> );
 
 // --- বিশেষ দ্রষ্টব্য: অ্যাডমিন আইডি ---
-// টেলিগ্রামের @userinfobot থেকে আপনার আইডিটি নিন এবং নিচের স্ট্রিংটি পরিবর্তন করুন।
-// Example: const ADMIN_TELEGRAM_ID = "987654321";
 const ADMIN_TELEGRAM_ID = "123456789"; // <<<--- আপনার সঠিক টেলিগ্রাম ইউজার আইডি এখানে বসান
 
 // --- গ্লোবাল ভেরিয়েবল সেটআপ ---
-// Use process.env (standard for build tools) or fallback
 const appId = import.meta.env.VITE_APP_ID || (typeof __app_id !== 'undefined' ? __app_id : 'default-redmarkfiles-app'); 
 
 // --- Firebase কনফিগারেশন লোডার ---
 let firebaseConfig;
 const userFirebaseConfig = {
-  // Hardcoded key warning expected here, use env vars in production
+  // Use environment variables in production!
   apiKey: "AIzaSyDBirFe0gejc1CkcPc0pdSUEufODrNYR78", 
   authDomain: "redmarkfiles.firebaseapp.com",
   projectId: "redmarkfiles",
@@ -45,18 +42,18 @@ try {
     const configJson = import.meta.env.VITE_FIREBASE_CONFIG; 
     if (configJson) {
         firebaseConfig = JSON.parse(configJson);
-         console.log("এনভায়রনমেন্ট ভেরিয়েবল (VITE_FIREBASE_CONFIG) থেকে Firebase কনফিগারেশন লোড করা হয়েছে।");
+         console.log("Environment variable (VITE_FIREBASE_CONFIG) loaded.");
     } else if (typeof __firebase_config !== 'undefined' && __firebase_config) { 
          firebaseConfig = JSON.parse(__firebase_config);
-         console.log("পরিবেশ (__firebase_config) থেকে Firebase কনফিগারেশন লোড করা হয়েছে।");
+         console.log("Global variable (__firebase_config) loaded.");
     } else {
         firebaseConfig = userFirebaseConfig;
-        console.warn("ব্যবহারকারীর হার্ডকোডেড Firebase কনফিগারেশন ব্যবহার করা হচ্ছে (শুধুমাত্র ডেভেলপমেন্টের জন্য)।");
+        console.warn("Using hardcoded Firebase config (DEV ONLY).");
     }
 } catch (e) {
-    console.error("Firebase config পার্স করতে সমস্যা হয়েছে:", e);
+    console.error("Firebase config parsing failed:", e);
     firebaseConfig = userFirebaseConfig; // Fallback
-    console.warn("ফলব্যাক হিসেবে হার্ডকোডেড Firebase কনফিগারেশন ব্যবহার করা হচ্ছে।");
+    console.warn("Falling back to hardcoded Firebase config.");
 }
 
 const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
@@ -68,7 +65,7 @@ const SmallTaskButton = ({ onClick, disabled, isLoading, title, token, icon, gra
         onClick={onClick}
         disabled={disabled || !isSdkReady} 
         className={`group relative overflow-hidden flex flex-col items-center justify-center p-4 rounded-2xl text-white font-medium transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:transform-none disabled:cursor-not-allowed ${gradient} ${isLoading ? 'cursor-wait' : ''} ${!isSdkReady ? 'opacity-40 cursor-not-allowed' : ''}`}
-        role="button" 
+        // role="button" Removed redundant role
     >
         <div className="absolute top-0 left-[-75%] w-[200%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-x-[50%] transition-all duration-700 ease-out"></div>
         <div className={`z-10 mb-2 p-3 rounded-full ${isLoading ? 'bg-black/40' : 'bg-black/20'}`}> {icon} </div>
@@ -77,7 +74,7 @@ const SmallTaskButton = ({ onClick, disabled, isLoading, title, token, icon, gra
         {isLoading && ( <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/60 rounded-2xl backdrop-blur-sm"> <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> </div> )}
     </button>
 );
-SmallTaskButton.propTypes = { onClick: PropTypes.func.isRequired, disabled: PropTypes.bool.isRequired, isLoading: PropTypes.bool, title: PropTypes.string.isRequired, token: PropTypes.number.isRequired, icon: PropTypes.node.isRequired, gradient: PropTypes.string.isRequired, isSdkReady: PropTypes.bool.isRequired };
+SmallTaskButton.propTypes = { onClick: PropTypes.func.isRequired, disabled: PropTypes.bool, isLoading: PropTypes.bool, title: PropTypes.string.isRequired, token: PropTypes.number.isRequired, icon: PropTypes.node.isRequired, gradient: PropTypes.string.isRequired, isSdkReady: PropTypes.bool.isRequired };
 
 
 // --- Main App Component ---
@@ -92,7 +89,7 @@ function App() {
     const [userProfile, setUserProfile] = useState(null); 
     const [premiumVideos, setPremiumVideos] = useState([]);
     const [communityVideos, setCommunityVideos] = useState([]);
-    const [isLoading, setIsLoading] = useState(false); 
+    const [isLoading, setIsLoading] = useState(false); // Only for unlock action
     const [message, setMessage] = useState(null); 
     
     // Use useRef for timeout ID - Defined at top level
@@ -136,10 +133,10 @@ function App() {
             setLogLevel('debug'); 
             setAuth(authInstance);
             setDb(dbInstance);
-            console.log("Firebase ইনিশিয়ালাইজ হয়েছে। Project:", firebaseConfig.projectId);
+            console.log("Firebase Initialized. Project:", firebaseConfig.projectId);
         } catch (e) { 
-            console.error("Firebase ইনিশিয়ালাইজেশন মারাত্মক ব্যর্থ:", e);
-            showMessage("গুরুত্বপূর্ণ সিস্টেম লোড হতে ব্যর্থ। অ্যাপ রিলোড করুন।");
+            console.error("Firebase Initialization Failed:", e);
+            showMessage("Core system failed to load. Please reload.");
             setIsAuthReady(false); 
             return; 
         }
@@ -150,15 +147,15 @@ function App() {
             script.dataset.zone = '10092910'; 
             script.dataset.sdk = 'show_10092910'; 
             script.async = true;
-            script.onload = () => { console.log("Monetag SDK লোড হয়েছে।"); setIsSdkReady(true); };
-            script.onerror = () => { console.error("Monetag SDK লোড হতে ব্যর্থ।"); showMessage("অ্যাড সিস্টেম লোড হতে ব্যর্থ।"); setIsSdkReady(false); };
+            script.onload = () => { console.log("Monetag SDK Loaded."); setIsSdkReady(true); };
+            script.onerror = () => { console.error("Monetag SDK Load Failed."); showMessage("Ad system failed to load."); setIsSdkReady(false); };
             document.head.appendChild(script);
         } else {
-             console.log("Monetag SDK আগে থেকেই লোড করা আছে।");
+             console.log("Monetag SDK already present.");
              setTimeout(() => {
                  const sdkFunc = typeof globalThis !== 'undefined' ? globalThis.show_10092910 : window.show_10092910;
                  if (typeof sdkFunc === 'function') { setIsSdkReady(true); } 
-                 else { console.error("Monetag SDK ফাংশন লোড হয়নি।"); setIsSdkReady(false); }
+                 else { console.error("Monetag SDK function not found after delay."); setIsSdkReady(false); }
              }, 500);
         }
 
@@ -167,14 +164,14 @@ function App() {
          if (telegramWindow && telegramWindow.WebApp) {
             try {
                 telegramWindow.WebApp.ready(); 
-                 console.log("Telegram WebApp প্রস্তুত।");
+                 console.log("Telegram WebApp Ready.");
                  const getUserData = () => {
                      resolvedTgUser = telegramWindow.WebApp.initDataUnsafe?.user;
                      if (resolvedTgUser && resolvedTgUser.id) {
-                         console.log("টেলিগ্রাম ইউজার:", resolvedTgUser);
+                         console.log("Telegram User:", resolvedTgUser);
                          setTelegramUser(resolvedTgUser);
                      } else {
-                         console.log("initDataUnsafe ইউজার নেই, সিমুলেটেড ব্যবহার হচ্ছে।");
+                         console.log("No user in initDataUnsafe, using simulated user.");
                          resolvedTgUser = { id: Number.parseInt(ADMIN_TELEGRAM_ID, 10), first_name: "Admin", username: "admin_sim_nodata" };
                          setTelegramUser(resolvedTgUser);
                      }
@@ -182,28 +179,31 @@ function App() {
                  getUserData();
                  if (!resolvedTgUser?.id) { setTimeout(getUserData, 300); }
             } catch (tgError) {
-                 console.error("টেলিগ্রাম WebApp.ready() ত্রুটি:", tgError);
+                 console.error("Telegram WebApp Error:", tgError);
                  resolvedTgUser = { id: Number.parseInt(ADMIN_TELEGRAM_ID, 10), first_name: "Admin", username: "admin_sim_err" };
                  setTelegramUser(resolvedTgUser);
             }
         } else {
-            console.warn("টেলিগ্রাম SDK লোড হয়নি। সিমুলেশন মোড।");
+            console.warn("Telegram SDK not loaded. Simulation mode.");
             resolvedTgUser = { id: Number.parseInt(ADMIN_TELEGRAM_ID, 10), first_name: "Admin", username: "admin_sim_no_sdk" }; 
             setTelegramUser(resolvedTgUser);
         }
 
         const authInstance = getAuth(app); 
         const unsubscribeAuth = onAuthStateChanged(authInstance, async (user) => {
+            // No hooks calls inside here
             const currentUserIdInListener = userIdRef.current; 
             if (user) {
                 if(user.uid !== currentUserIdInListener) { 
                     userIdRef.current = user.uid; 
                     setUserId(user.uid);
+                    // Defer setting auth ready slightly
                     setTimeout(() => setIsAuthReady(true), 50); 
                     console.log("Firebase Auth State: User Logged In:", user.uid, "Anon:", user.isAnonymous);
                 } else if (!isAuthReady) {
+                     // If UID is the same but auth wasn't ready, mark it ready
                      setIsAuthReady(true);
-                     console.log("Firebase Auth State: Auth marked ready for existing user:", user.uid);
+                     console.log("Firebase Auth State: Auth ready for existing user:", user.uid);
                 }
             } else {
                 console.log("Firebase Auth State: No user, attempting sign-in...");
@@ -216,33 +216,36 @@ function App() {
                         await signInAnonymously(authInstance);
                     }
                 } catch (authError) {
-                    console.error("Firebase সাইন ইন ব্যর্থ:", authError);
-                     showMessage("অ্যাকাউন্ট লোড করতে সমস্যা হচ্ছে। অ্যাপ রিলোড করুন।");
+                    console.error("Firebase Sign In Failed:", authError);
+                     showMessage("Account loading failed. Please reload.");
                 }
             }
         }, (error) => {
             console.error("Firebase Auth Listener Error:", error);
-            setMessage("ব্যবহারকারীর অবস্থা যাচাই করতে সমস্যা হচ্ছে।");
+            setMessage("User status check failed."); // Use setMessage, not showMessage
             setIsAuthReady(false);
             userIdRef.current = null; 
         });
         
+        // --- Cleanup ---
         return () => {
-            console.log("অ্যাপ ক্লিনআপ: লিসেনার সরানো হচ্ছে...");
+            console.log("App Cleanup: Removing listeners...");
             unsubscribeAuth();
              if (fontLink?.parentNode === document.head) document.head.removeChild(fontLink);
             window.fetch = originalFetch; 
             if (messageTimeoutRef.current) clearTimeout(messageTimeoutRef.current); 
         };
-    }, [showMessage]); // Only showMessage is a dependency now
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [showMessage]); // showMessage is now stable due to useCallback
+
 
     // --- 2. Database Listener ---
     useEffect(() => {
         if (!isAuthReady || !db || !userId) {
-             console.log("ডেটাবেস লিসেনার সেট করার জন্য প্রস্তুত নয়...", { isAuthReady, db: !!db, userId });
+             console.log("Database listener prerequisites not met.", { isAuthReady, db: !!db, userId });
             return () => {}; 
         }
-         console.log(`ডেটাবেস লিসেনার সেট করা হচ্ছে userId: ${userId}`);
+         console.log(`Setting up database listeners for userId: ${userId}`);
          
          let unsubProfile = () => {};
          let unsubPremium = () => {};
@@ -253,64 +256,66 @@ function App() {
             const userProfileRef = doc(db, `artifacts/${appId}/users/${userId}/profile`, "data");
             unsubProfile = onSnapshot(userProfileRef, (docSnap) => {
                 if (docSnap.exists()) {
-                     console.log("প্রোফাইল ডেটা আপডেট:", docSnap.data());
+                     console.log("Profile data updated:", docSnap.data());
                     setUserProfile(docSnap.data());
                 } else {
-                     console.log(`ব্যবহারকারীর (${userId}) প্রোফাইল নেই, তৈরি করা হচ্ছে...`);
+                     console.log(`User profile (${userId}) not found, creating...`);
                      if (telegramUser && telegramUser.id) {
                          setDoc(userProfileRef, { 
                              tokenBalance: 0, unlockedVideos: [], joinedAt: serverTimestamp(),
                              telegramId: telegramUser.id, firstName: telegramUser.first_name || '', username: telegramUser.username || ''
-                         }).then(() => console.log(`নতুন প্রোফাইল (${userId}) তৈরি হয়েছে।`))
-                           .catch(err => console.error(`প্রোফাইল (${userId}) তৈরি করতে Firestore সমস্যা:`, err));
+                         }).then(() => console.log(`New profile (${userId}) created.`))
+                           .catch(err => console.error(`Firestore error creating profile (${userId}):`, err));
                      } else { 
-                         console.warn(`প্রোফাইল (${userId}) তৈরি করা যাচ্ছে না, টেলিগ্রাম ইউজার ডেটা নেই। 1 সেকেন্ড পর আবার চেষ্টা করা হবে...`); 
+                         // Retry creating profile slightly later
+                         console.warn(`Cannot create profile (${userId}), Telegram user data missing. Retrying in 1s...`); 
                          setTimeout(() => {
-                            const latestTelegramUser = telegramUser; // Re-check telegramUser state
+                            // Re-read telegramUser from state *inside* timeout
+                            const latestTelegramUser = telegramUser; 
                             if (latestTelegramUser && latestTelegramUser.id) {
                                 setDoc(userProfileRef, { 
                                     tokenBalance: 0, unlockedVideos: [], joinedAt: serverTimestamp(),
                                     telegramId: latestTelegramUser.id, firstName: latestTelegramUser.first_name || '', username: latestTelegramUser.username || ''
-                                }).catch(err => console.error(`প্রোফাইল (${userId}) তৈরি করতে Firestore Retry সমস্যা:`, err));
+                                }).catch(err => console.error(`Firestore retry error creating profile (${userId}):`, err));
                             } else {
-                                console.error(`প্রোফাইল (${userId}) তৈরি করা সম্ভব নয়, টেলিগ্রাম ইউজার ডেটা পাওয়া যায়নি (Retry)।`);
+                                console.error(`Cannot create profile (${userId}) on retry, Telegram data still missing.`);
                             }
                          }, 1000);
                      }
                 }
-            }, (error) => console.error("প্রোফাইল স্ন্যাপশট ত্রুটি:", error));
+            }, (error) => console.error("Profile snapshot error:", error));
 
             // Premium Videos Listener
             const premiumVideosRef = collection(db, `artifacts/${appId}/public/data`, "premium_videos");
             const qPremium = query(premiumVideosRef); 
             unsubPremium = onSnapshot(qPremium, (querySnapshot) => {
-                 console.log(`প্রিমিয়াম ভিডিও আপডেট: ${querySnapshot.size}`);
+                 console.log(`Premium videos updated: ${querySnapshot.size}`);
                 const videos = querySnapshot.docs
                     .map(doc => ({ id: doc.id, ...doc.data() }))
                     .sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)); 
                 setPremiumVideos(videos);
-            }, (error) => console.error("প্রিমিয়াম ভিডিও স্ন্যাপশট ত্রুটি:", error));
+            }, (error) => console.error("Premium videos snapshot error:", error));
 
             // Community Videos Listener
             const communityVideosRef = collection(db, `artifacts/${appId}/public/data`, "community_videos");
             const qCommunity = query(communityVideosRef);
             unsubCommunity = onSnapshot(qCommunity, (querySnapshot) => {
-                console.log(`কমিউনিটি ভিডিও আপডেট: ${querySnapshot.size}`);
+                console.log(`Community videos updated: ${querySnapshot.size}`);
                 const videos = querySnapshot.docs
                     .map(doc => ({ id: doc.id, ...doc.data() }))
                     .sort((a, b) => (b.submittedAt?.seconds || 0) - (a.submittedAt?.seconds || 0)); 
                 setCommunityVideos(videos);
-            }, (error) => console.error("কমিউনিটি ভিডিও স্ন্যাপশট ত্রুটি:", error));
+            }, (error) => console.error("Community videos snapshot error:", error));
         } catch (dbError) {
-             console.error("ডেটাবেস লিসেনার সেটআপ করতে ত্রুটি:", dbError);
-             showMessage("ডেটা লোড করতে সমস্যা হচ্ছে।");
+             console.error("Database listener setup error:", dbError);
+             showMessage("Failed to load data.");
         }
         return () => {
-             console.log("ডেটাবেস লিসেনারগুলো সরানো হচ্ছে...");
+             console.log("Removing database listeners...");
             unsubProfile(); unsubPremium(); unsubCommunity();
         };
-    // Re-added appId as dependency, assuming it might change if __app_id is used dynamically
-    }, [isAuthReady, db, userId, appId, telegramUser, showMessage]); 
+    // Removed showMessage from dependencies here, assuming db listener errors are logged
+    }, [isAuthReady, db, userId, appId, telegramUser]); 
 
 
     // --- Content Rendering ---
@@ -319,7 +324,7 @@ function App() {
              return (
                  <div className="flex flex-col items-center justify-center pt-20 text-center">
                      <svg className="animate-spin h-10 w-10 text-indigo-400 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg>
-                     <p className="text-lg font-medium text-slate-300">প্রোফাইল লোড হচ্ছে...</p>
+                     <p className="text-lg font-medium text-slate-300">Loading Profile...</p>
                  </div>
              );
         }
@@ -336,7 +341,7 @@ function App() {
 
     // Initial Loading Screen
     if (!auth || !db) { 
-        return ( <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white font-poppins"> <svg className="animate-spin h-10 w-10 text-indigo-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> <span className="text-2xl font-semibold">অ্যাপ লোড হচ্ছে...</span> </div> );
+        return ( <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white font-poppins"> <svg className="animate-spin h-10 w-10 text-indigo-400 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle> <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> </svg> <span className="text-2xl font-semibold">Loading App...</span> </div> );
     }
 
     return (
@@ -378,14 +383,14 @@ BottomNavItem.propTypes = { label: PropTypes.string.isRequired, icon: PropTypes.
 function PremiumFeed({ videos, userProfile, db, userId, appId, showMessage, setIsLoading, isLoading, setCurrentTab }) { 
     const [unlocked, setUnlocked] = useState({}); 
     useEffect(() => { const unlockedIds = userProfile?.unlockedVideos; if (unlockedIds && Array.isArray(unlockedIds)) { const initialUnlocked = unlockedIds.reduce((acc, id) => ({ ...acc, [id]: true }), {}); setUnlocked(initialUnlocked); } else { setUnlocked({}); } }, [userProfile?.unlockedVideos]);
-    const handleUnlock = useCallback(async (video) => { // useCallback here
+    const handleUnlock = useCallback(async (video) => { 
         const cost = video.tokenCost || 5; 
         if ((userProfile?.tokenBalance ?? 0) < cost) { 
             showMessage("অপর্যাপ্ত টোকেন! টাস্ক সম্পন্ন করে টোকেন আয় করুন।");
              if(setCurrentTab) setCurrentTab('tasks');
             return;
         }
-        // Use local loading state specific to this component if global one isn't passed correctly
+        if (isLoading) return; 
         setIsLoading(true); 
         try {
             const userProfileRef = doc(db, `artifacts/${appId}/users/${userId}/profile`, "data");
@@ -393,9 +398,8 @@ function PremiumFeed({ videos, userProfile, db, userId, appId, showMessage, setI
             const updatedUnlocked = [...new Set([...currentUnlocked, video.id])]; 
             await setDoc(userProfileRef, { tokenBalance: increment(-cost), unlockedVideos: updatedUnlocked }, { merge: true });
              setUnlocked(prev => ({ ...prev, [video.id]: true }));
-        } catch (error) { console.error("আনলক করার সময় Firestore ত্রুটি:", error); showMessage("ভিডিও আনলক করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।"); } 
+        } catch (error) { console.error("Unlock Firestore Error:", error); showMessage("ভিডিও আনলক করতে সমস্যা হয়েছে।"); } 
         finally { setIsLoading(false); }
-    // Add dependencies for useCallback
     }, [userProfile, isLoading, setIsLoading, db, appId, userId, showMessage, setCurrentTab]); 
 
     const getPlaceholderUrl = (title = 'Video') => { const bgColor = '1e293b'; const textColor = '94a3b8'; const shortTitle = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/\s+/g, '-').substring(0, 20); return `https://placehold.co/600x338/${bgColor}/${textColor}?text=${encodeURIComponent(shortTitle+'...')}&font=poppins`; }
@@ -449,7 +453,7 @@ function Profile({ userProfile, telegramUser }) { const joinedDate = userProfile
 Profile.propTypes = { userProfile: PropTypes.object, telegramUser: PropTypes.object };
 
 // --- Admin Dashboard Component ---
-function AdminDashboard({ db, appId, showMessage }) { const [title, setTitle] = useState(""); const [videoUrl, setVideoUrl] = useState(""); const [thumbnailUrl, setThumbnailUrl] = useState(""); const [tokenCost, setTokenCost] = useState(5); const [isSubmitting, setIsSubmitting] = useState(false); const handleAddVideo = async (e) => { e.preventDefault(); if (!title.trim() || !videoUrl.trim() || tokenCost < 0) { showMessage("⚠️ ভিডিও টাইটেল, URL এবং সঠিক টোকেন মূল্য দিন।"); return; } try { new URL(videoUrl.trim()); } catch { showMessage("⚠️ সঠিক ভিডিও URL দিন।"); return; } if (thumbnailUrl.trim()) { try { new URL(thumbnailUrl.trim()); } catch { showMessage("⚠️ থাম্বনেইল URL সঠিক নয়।"); return; } } setIsSubmitting(true); try { const premiumVideosRef = collection(db, `artifacts/${appId}/public/data`, "premium_videos"); const docData = { title: title.trim(), videoUrl: videoUrl.trim(), tokenCost: Number(tokenCost), createdAt: serverTimestamp() }; if (thumbnailUrl.trim()) { docData.thumbnailUrl = thumbnailUrl.trim(); } await addDoc(premiumVideosRef, docData); setTitle(""); setVideoUrl(""); setThumbnailUrl(""); setTokenCost(5); showMessage("✅ নতুন ভিডিও যোগ করা হয়েছে!"); } catch (error) { console.error("অ্যাডমিন: ভিডিও যোগ করতে Firestore ত্রুটি:", error); showMessage(`❌ ভিডিও যোগ করতে সমস্যা: ${error.message}`); } finally { setIsSubmitting(false); } }; return ( <div> <h2 className="text-2xl font-semibold mb-3 text-slate-200 flex items-center"><AdminIcon className="w-6 h-6 mr-2 text-red-400"/> অ্যাডমিন প্যানেল ⚙️</h2> <p className="mb-5 text-base text-slate-400">নতুন প্রিমিয়াম ভিডিও যোগ করুন।</p> <form onSubmit={handleAddVideo} className="space-y-4 bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700"> <div> <label htmlFor="videoTitleAdmin" className="block text-sm font-medium text-slate-300 mb-1">ভিডিও টাইটেল <span className="text-red-400">*</span></label> <input id="videoTitleAdmin" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> </div> <div> <label htmlFor="videoUrlAdmin" className="block text-sm font-medium text-slate-300 mb-1">ভিডিও URL (Embed) <span className="text-red-400">*</span></label> <input id="videoUrlAdmin" type="url" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} placeholder="https://www.youtube.com/embed/..." className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> <p className="text-xs text-slate-500 mt-1">শুধুমাত্র embed URL ব্যবহার করুন।</p> </div> <div> <label htmlFor="thumbnailUrlAdmin" className="block text-sm font-medium text-slate-300 mb-1">থাম্বনেইল URL (Optional)</label> <input id="thumbnailUrlAdmin" type="url" value={thumbnailUrl} onChange={(e) => setThumbnailUrl(e.target.value)} placeholder="https://...image.jpg (খালি রাখা যাবে)" className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" /> <p className="text-xs text-slate-500 mt-1">খালি রাখলে ডিফল্ট placeholder দেখানো হবে।</p> </div> <div> <label htmlFor="tokenCostAdmin" className="block text-sm font-medium text-slate-300 mb-1">টোকেন মূল্য <span className="text-red-400">*</span></label> <input id="tokenCostAdmin" type="number" min="0" value={tokenCost} onChange={(e) => setTokenCost(e.target.value)} className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> </div> <button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg active:scale-95"> {isSubmitting ? ( <><svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25"></circle> <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" className="opacity-75"></path> </svg><span>যোগ হচ্ছে...</span></> ) : ( "প্রিমিয়াম ভিডিও যোগ করুন" )} </button> </form> </div> ); }
+function AdminDashboard({ db, appId, showMessage }) { const [title, setTitle] = useState(""); const [videoUrl, setVideoUrl] = useState(""); const [thumbnailUrl, setThumbnailUrl] = useState(""); const [tokenCost, setTokenCost] = useState(5); const [isSubmitting, setIsSubmitting] = useState(false); const handleAddVideo = async (e) => { e.preventDefault(); if (!title.trim() || !videoUrl.trim() || tokenCost < 0) { showMessage("⚠️ ভিডিও টাইটেল, URL এবং সঠিক টোকেন মূল্য দিন।"); return; } try { new URL(videoUrl.trim()); } catch { showMessage("⚠️ সঠিক ভিডিও URL দিন।"); return; } if (thumbnailUrl.trim()) { try { new URL(thumbnailUrl.trim()); } catch { showMessage("⚠️ থাম্বনেইল URL সঠিক নয়।"); return; } } setIsSubmitting(true); try { const premiumVideosRef = collection(db, `artifacts/${appId}/public/data`, "premium_videos"); const docData = { title: title.trim(), videoUrl: videoUrl.trim(), tokenCost: Number(tokenCost), createdAt: serverTimestamp() }; if (thumbnailUrl.trim()) { docData.thumbnailUrl = thumbnailUrl.trim(); } await addDoc(premiumVideosRef, docData); setTitle(""); setVideoUrl(""); setThumbnailUrl(""); setTokenCost(5); showMessage("✅ নতুন ভিডিও যোগ করা হয়েছে!"); } catch (error) { console.error("অ্যাডমিন: ভিডিও যোগ করতে Firestore ত্রুটি:", error); showMessage(`❌ ভিডিও যোগ করতে সমস্যা: ${error.message}`); } finally { setIsSubmitting(false); } }; return ( <div> <h2 className="text-2xl font-semibold mb-3 text-slate-200 flex items-center"><AdminIcon className="w-6 h-6 mr-2 text-red-400"/> অ্যাডমিন প্যানেল ⚙️</h2> <p className="mb-5 text-base text-slate-400">নতুন প্রিমিয়াম ভিডিও যোগ করুন।</p> <form onSubmit={handleAddVideo} className="space-y-4 bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700"> <div> <label htmlFor="videoTitleAdmin" className="block text-sm font-medium text-slate-300 mb-1">ভিডিও টাইটেল <span className="text-red-400">*</span></label> <input id="videoTitleAdmin" type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> </div> <div> <label htmlFor="videoUrlAdmin" className="block text-sm font-medium text-slate-300 mb-1">ভিডিও URL (Embed) <span className="text-red-400">*</span></label> <input id="videoUrlAdmin" type="url" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} placeholder="https://www.youtube.com/embed/..." className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> <p className="text-xs text-slate-500 mt-1">শুধুমাত্র embed URL ব্যবহার করুন।</p> </div> <div> <label htmlFor="thumbnailUrlAdmin" className="block text-sm font-medium text-slate-300 mb-1">থাম্বনেইল URL (Optional)</label> <input id="thumbnailUrlAdmin" type="url" value={thumbnailUrl} onChange={(e) => setThumbnailUrl(e.target.value)} placeholder="https://...image.jpg (খালি রাখা যাবে)" className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" /> <p className="text-xs text-slate-500 mt-1">খালি রাখলে ডিফল্ট placeholder দেখানো হবে।</p> </div> <div> <label htmlFor="tokenCostAdmin" className="block text-sm font-medium text-slate-300 mb-1">টোকেন মূল্য <span className="text-red-400">*</span></label> <input id="tokenCostAdmin" type="number" min="0" value={tokenCost} onChange={(e) => setTokenCost(Number(e.target.value))} className="w-full bg-slate-700 text-white rounded-lg px-4 py-3 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 placeholder-slate-400" required /> </div> <button type="submit" disabled={isSubmitting} className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-lg active:scale-95"> {isSubmitting ? ( <><svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" className="opacity-25"></circle> <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" className="opacity-75"></path> </svg><span>যোগ হচ্ছে...</span></> ) : ( "প্রিমিয়াম ভিডিও যোগ করুন" )} </button> </form> </div> ); }
 AdminDashboard.propTypes = { db: PropTypes.object, appId: PropTypes.string.isRequired, showMessage: PropTypes.func.isRequired };
 
 export default App;
